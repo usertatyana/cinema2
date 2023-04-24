@@ -3,7 +3,7 @@ import renderCard from './renderCard.js';
 
 const filmWeek = document.querySelector('.film-week');
 
-const fileReader = data => {
+const fileReader = (data, keyVideo) => {
     console.log('data: ', data);
 
     filmWeek.innerHTML = `
@@ -16,7 +16,12 @@ const fileReader = data => {
         <p class="film-week__title_origin">${data.original_name || data.original_title}</p>
     </div>
     <h2 class="film-week__title">${data.name || data.title}</h2>
-    <a class="film-week__watch-trailer tube" href="https://youtu.be/V0hagz_8L3M" aria-label="смотреть трейлер"></a>
+    ${keyVideo ? 
+        ` <a class="film-week__watch-trailer tube" 
+        href="https://youtu.be/V0hagz_8L3M" 
+        aria-label="смотреть трейлер"></a>` : 
+        ''}
+   
 </div>
     `;
 
