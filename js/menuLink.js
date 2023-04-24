@@ -37,15 +37,13 @@ const menuLink = () => {
                 // Топ филмов
                 if (target.classList.contains('get-nav__link_top-movies')) {
                     getTop('movie')
-                      .then((data) => renderCard(data.results));
+                    .then((data) => renderCard(data.results));
                 }
                 // Топ сериалов
                 if (target.classList.contains('get-nav__link_top-tv')) {
                     getTop('tv')
-                      .then((data) => renderCard(data.results));
-                  }
-        
-
+                    .then((data) => renderCard(data.results));
+                }
             }
 
         })
