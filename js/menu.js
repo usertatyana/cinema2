@@ -17,7 +17,7 @@ const slideMenu = ({ openBtn, menu, classActiveMenu, closeTrigger }) => {
 
     navigationClose.forEach((item) => {
         item.addEventListener('click', () => {
-
+            closeMenu(navigation, classActiveMenu);
         })
     })
 

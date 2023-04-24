@@ -1,8 +1,9 @@
 import { getTriends } from './services.js';
+import renderCard from './renderCard.js';
 
 const filmWeek = document.querySelector('.film-week');
 
-const FileReader = data => {
+const fileReader = data => {
     console.log('data: ', data);
 
     filmWeek.innerHTML = `
@@ -23,8 +24,11 @@ const FileReader = data => {
 
 const renderVideo = async () => {
     const data = await getTriends();
-
-    FileReader(data.results[0]);
+    
+    const [firstCard, ...otherCard ] = data.results;
+    otherCard.length = 16;
+    fileReader(firstCard);
+    renderCard(otherCard);
 };
 
 export default renderVideo;
